@@ -1,7 +1,8 @@
-var indexTemplate = './react/index.jsx'
-  , render = require('./html-render')
+let  indexTemplate = './react/index.jsx'
+import render = require('./html-render')
 
-module.exports = function *root(){
+ function *root(){
   this.body = render(indexTemplate)
-  this.type = 'html'
+  this.z = 'html'
 }
+export = root;
