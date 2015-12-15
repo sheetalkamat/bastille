@@ -1,9 +1,10 @@
-var koa = require('koa')
-  , routes = require('./routes')
+import koa = require('koa')
+import routes = require('./routes')
 
-var app = module.exports = koa()
+var app = koa()
+export = app;
 
-var middleware = routes
+let middleware = routes
 
-for(var i in middleware)
+for(let i in middleware)
   app.use(middleware[i])
