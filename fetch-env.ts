@@ -1,4 +1,4 @@
-module.exports = function(name) {
+export = function(name) {
   if(envContains(name)) return process.env[name]
 }
 
