@@ -1,17 +1,19 @@
-module.exports = function(text, maxWidth) {
-  var strings = text.split('\n')
-  return strings.map(function(str) {
-    return splitStringWithoutNewline(str, maxWidth)
-  }).join('\n')
+function textFormatter(text: string, maxWidth: number) {
+    let strings = text.split('\n')
+    return strings.map(function (str) {
+        return splitStringWithoutNewline(str, maxWidth)
+    }).join('\n')
 }
 
-function splitStringWithoutNewline(string, maxWidth) {
-  var newText = ''
-  var words = string.split(' ')
-  var totalNewlines = 0
-  for(var i = 0; i < words.length; i++) {
-    var lastLine = (newText).split('\n').pop()
-    var beginning = lastLine.length === 0
+export = textFormatter;
+
+function splitStringWithoutNewline(string: string, maxWidth: number) {
+  let newText = ''
+  let words = string.split(' ')
+  let totalNewlines = 0
+  for(let i = 0; i < words.length; i++) {
+    let lastLine = (newText).split('\n').pop()
+    let beginning = lastLine.length === 0
 
     // word fits on current line
     if((lastLine + words[i]).length < maxWidth) {
@@ -25,16 +27,16 @@ function splitStringWithoutNewline(string, maxWidth) {
     }
     // word had no chance, break it up
     else {
-      var full = lastLine.length === maxWidth || lastLine.length === maxWidth-1
+      let full = lastLine.length === maxWidth || lastLine.length === maxWidth-1
       newText += (beginning || full) ? '' : ' '
-      var charsLeft = maxWidth - (
+      let charsLeft = maxWidth - (
         lastLine + (beginning ? '' : ' ')
       ).length
-      var charsForRestOfLine = words[i].substring(0,charsLeft)
+      let charsForRestOfLine = words[i].substring(0,charsLeft)
       newText += charsForRestOfLine
-      var carryChars = words[i].substring(charsLeft)
+      let carryChars = words[i].substring(charsLeft)
       while(carryChars.length > 0){
-        var toAdd = carryChars.substring(0, maxWidth)
+        let toAdd = carryChars.substring(0, maxWidth)
         newText += '\n'
         newText += toAdd
         carryChars = carryChars.substring(maxWidth)
