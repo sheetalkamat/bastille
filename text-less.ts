@@ -1,7 +1,5 @@
 
-module.exports = textLess
-
-function textLess(text, maxLines, furthestChar) {
+function textLess(text: string, maxLines: number, furthestChar: number): { text: string, proceed: boolean, done: boolean } {
   maxLines = maxLines || text.split('\n').length
   furthestChar = furthestChar || 0
   var textUntilFurthestChar = text.substring(0, furthestChar)
@@ -15,3 +13,5 @@ function textLess(text, maxLines, furthestChar) {
   , done: furthestChar >= text.length
   }
 }
+
+export = textLess;
