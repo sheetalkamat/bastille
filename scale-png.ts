@@ -1,9 +1,9 @@
-var fs = require('fs')
-  , _ = require('lodash')
-  , PNG = require('pngjs').PNG
-  , inFile = process.argv[2]
-  , outFile = process.argv[3]
-  , scaler = parseInt(process.argv[4])
+import fs = require('fs')
+  import  _ = require('lodash')
+import PNG = require('pngjs').PNG
+let inFile = process.argv[2]
+let outFile = process.argv[3]
+let scaler = parseInt(process.argv[4])
 
 if(process.argv.length < 3 || process.argv.indexOf('--help') >= 0) {
   console.log([
