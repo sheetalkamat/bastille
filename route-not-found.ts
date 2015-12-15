@@ -1,4 +1,6 @@
-module.exports = function *notFound() {
+function *notFound() {
   this.status = 404
   this.body = '404 - page not found'
 }
+
+export = notFound;

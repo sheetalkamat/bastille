@@ -1,9 +1,9 @@
-var fs = require('fs')
-  , path = require('path')
-  , build = require('./build-assets')
-  , assetSourceDir = 'public/assets'
+import fs = require('fs')
+import path = require('path')
+import build = require('./build-assets')
+let assetSourceDir = 'public/assets'
 
-module.exports = serveFile
+export = serveFile
 
 function *serveFile(page, next) {
   var assetSource = getAssetSource(page)
