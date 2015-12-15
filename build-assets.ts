@@ -1,17 +1,17 @@
-require('./import-jsx')
-var browserify = require('browserify')
-  , brfs = require('brfs')
-  , sass = require('node-sass')
-  , path = require('path')
-  , fs = require('fs')
+import './import-jsx'
+import browserify = require('browserify')
+  import brfs = require('brfs')
+  import sass = require('node-sass')
+  import path = require('path')
+  import fs = require('fs')
 
-module.exports = function(page) {
-  var ext = path.extname(page)
+export = function(page) {
+  let ext = path.extname(page)
   if(!builders[ext]) return
   return builders[ext](page)
 }
 
-var builders = {
+let builders = {
   '.js': function (page) {
     var browserified = browserify({
       entries: page

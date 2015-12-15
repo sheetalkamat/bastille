@@ -8,6 +8,6 @@ use this to oscilate between two provided values
 
 */
 
-module.exports = function(a, b, x) {
+export = function (a: number, b: number, x: number) {
   return ((a-b)/2) * Math.cos(x) + ((a+b)/2)
 }

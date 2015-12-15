@@ -1,3 +1,3 @@
-module.exports = function(F, args) {
+export = function(F, args) {
   return new (F.bind.apply(F,[{}].concat(args)))()
 }
