@@ -1,7 +1,7 @@
-var initTime = new Date().getTime()
-  , createServer = require('./server')
-  , fetch = require('./fetch-env')
-  , PORT=fetch('PORT')
+let initTime = new Date().getTime()
+import createServer = require('./server')
+import fetch = require('./fetch-env')
+let PORT=fetch('PORT')
 
 createServer.listen(fetch('PORT'))
 
