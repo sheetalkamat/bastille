@@ -1,7 +1,7 @@
-require('./import-jsx')
-var React = require('react')
+import './import-jsx'
+import React = require('react')
 
-module.exports = function(jsxTemplate, properties) {
+export = function(jsxTemplate, properties) {
   var factory = React.createFactory(require(jsxTemplate))
   return React.renderToStaticMarkup(factory(properties))
 }
